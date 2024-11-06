@@ -1,151 +1,210 @@
-/* Reset and general styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #2c3e50;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #e2e2e2;
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.card table th, .card table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e6ed;
+  text-align: left;
+}
+
+.card table th {
+  background-color: #f5f7fa;
+  font-weight: 500;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #e0e6ed;
+  margin: 20px 0;
+}
+
+.analysis-item {
+  padding: 20px;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* Adjust styles for smaller screens */
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for mobile devices */
+}
+
+/* Print Styles */
+@media print {
   body {
-    background-color: #f8f9fa;
+    background-color: #fff;
     color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
   }
-  
-  h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin: 20px 0;
-    font-size: 2rem;
-    width: 100%;
+
+  .navbar {
+    display: none;
   }
-  
-  #reportContainer {
-    width: 90%;
-    max-width: 1200px; /* Allow the container to grow more on larger screens */
-    margin: 0 auto;
-    padding: 20px;
+
+  .card, .analysis-item {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
   }
-  
-  /* Card styling for each section */
-  .card {
-    background-color: #ffffff;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
+
   .card h3 {
-    color: #34495e;
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-size: 18px;
   }
-  
-  .card h4 {
-    color: #7f8c8d;
-    font-size: 1.2rem;
-    margin-top: 15px;
+
+  .card table th, .card table td {
+    padding: 8px;
   }
-  
-  /* Table styling */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 15px;
+
+  .card img {
+    max-width: 90%;
+    page-break-inside: avoid;
+    box-shadow: none;
   }
-  
-  table, th, td {
-    border: 1px solid #dcdcdc;
+
+  /* Force page breaks for long sections */
+  .page-break {
+    page-break-before: always;
   }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    font-weight: bold;
-  }
-  
-  td {
-    color: #555;
-  }
-  
-  /* Image styling */
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-top: 10px;
-    border-radius: 4px;
-  }
-  
-  /* Button styling */
-  button {
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  button:hover {
-    background-color: #2980b9;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 992px) {
-    #reportContainer {
-      width: 95%;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    #reportContainer {
-      width: 100%;
-      padding: 10px;
-    }
-  
-    h2 {
-      font-size: 1.8rem;
-    }
-  
-    h3, h4 {
-      font-size: 1.2rem;
-    }
-  
-    /* Make buttons take full width on small screens */
-    button {
-      width: 100%;
-    }
-  }
-  
-  /* Extra small devices (portrait phones, less than 576px) */
-  @media (max-width: 576px) {
-    body {
-      padding: 10px;
-    }
-  
-    h2 {
-      font-size: 1.5rem;
-    }
-  
-    h3, h4 {
-      font-size: 1rem;
-    }
-  
-    table, th, td {
-      font-size: 0.9rem;
-    }
-  }
-  
+}
+
+
+
+
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-align: right;
+}
+
+.navbar button {
+  background-color: #555;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navbar button:hover {
+  background-color: #777;
+}
+
+
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 0.9em;
+  text-align: left;
+  color: #666;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #555;
+}

@@ -3,19 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <title>Upload CSV</title>
+    <link rel="stylesheet" href="scripts/style.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <h2>Upload CSV</h2>
-    <form id="uploadForm">
-      <input
-        type="file"
-        id="csv_file"
-        name="csv_file"
-        accept=".csv"
-        required
-      /><br />
-      <button type="submit">Upload</button>
-    </form>
+    <div class="navbar">
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="container">
+      <h2>Upload CSV</h2>
+      <form id="uploadForm">
+        <label for="csv_file">Choose CSV File:</label>
+        <input
+          type="file"
+          id="csv_file"
+          name="csv_file"
+          accept=".csv"
+          required
+        />
+
+        <button type="submit">Upload</button>
+      </form>
+    </div>
 
     <script>
       document
@@ -37,6 +72,7 @@
               body: formData,
             }
           );
+
           const data = await response.json();
           if (data.success) {
             alert("CSV uploaded successfully!");
@@ -46,6 +82,12 @@
             alert("Upload failed: " + data.message);
           }
         });
+
+      function logout() {
+        localStorage.removeItem("token");
+        alert("Logged out successfully!");
+        window.location.href = "login.html";
+      }
     </script>
   </body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SignUP</title>
+    <link rel="stylesheet" href="scripts/style.css" />
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="login.html"><button id="login">Login</button></a>
+    </div>
+
+    <div class="container">
+      <h2>Sign UP</h2>
+      <form id="signupform">
+        <label for="signupUsername">Username:</label>
+        <input type="text" id="signupUsername" name="username" required />
+
+        <label for="signupPassword">Password:</label>
+        <input type="password" id="signupPassword" name="password" required />
+
+        <button type="submit">Sign UP</button>
+      </form>
+    </div>
+
+    <!-- Place the script at the bottom of the body -->
+    <script>
+      document
+        .getElementById("signupform")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const username = document.getElementById("signupUsername").value; // Ensure unique ID for signup username
+          const password = document.getElementById("signupPassword").value; // Ensure unique ID for signup password
+
+          try {
+            const response = await fetch("http://127.0.0.1:8000/api/signup/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ username, password }),
+            });
+
+            const data = await response.json();
+            if (data.success) {
+              alert("Signup successful! Please log in.");
+              window.location.href = "login.html"; // Redirect to login page
+            } else {
+              alert("Signup failed: " + data.message);
+            }
+          } catch (error) {
+            console.error("Error during signup request:", error);
+            alert("An error occurred. Please try again.");
+          }
+        });
+    </script>
+  </body>
+</html>

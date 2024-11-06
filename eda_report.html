@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>EDA Report</title>
-    <link rel="stylesheet" href="scripts/style.css" />
-  </head>
-  <body>
-    <h2>EDA Report</h2>
-    <div id="reportContainer"></div>
-    <script src="scripts/script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analysis Application</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="scripts/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+</head>
+<body>
+  <div class="navbar">
+    <a href="#">Analysis Application</a>
+    <button id="generatePDF" class="btn">Generate PDF</button>
+  </div>
+
+  <div id="reportContainer" class="container">
+    <!-- Report content will be dynamically inserted here -->
+  </div>
+
+  <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <script src="scripts/script.js"></script>
+</head>
 </html>
