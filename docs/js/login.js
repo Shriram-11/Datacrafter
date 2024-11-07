@@ -3,7 +3,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const response = await fetch("http://127.0.0.1:8000/api/login/", {
+    const response = await fetch("https://datacrafters.onrender.com/api/login/", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",

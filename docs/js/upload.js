@@ -6,7 +6,7 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
 
           const token = localStorage.getItem("token");
           const response = await fetch(
-            "http://127.0.0.1:8000/api/upload_csv/",
+            "https://datacrafters.onrender.com/api/upload_csv/",
             {
               method: "POST",
               headers: {

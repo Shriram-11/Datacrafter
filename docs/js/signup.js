@@ -4,7 +4,7 @@ const username = document.getElementById("signupUsername").value; // Ensure uniq
 const password = document.getElementById("signupPassword").value; // Ensure unique ID for signup password
 console.log(username);
 try {
-const response = await fetch("http://127.0.0.1:8000/api/signup/", {
+const response = await fetch("https://datacrafters.onrender.com/api/signup/", {
     method: "POST",
     headers: {
     "Content-Type": "application/json",
