@@ -48,16 +48,12 @@
         <div class="collapse navbar-collapse text-center" id="navigation">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html"
-                >Home</a
-              >
-            <li class="nav-item active">
               <a class="nav-link" href="https://github.com/Shriram-11"
                 >My GitHub</a
               >
             </li>
             <li class="nav-item">
-              <button id="logout" class="btn btn-primary">Logout</button>
+              <a class="nav-link" href="login.html">Login</a>
             </li>
           </ul>
         </div>
@@ -75,34 +71,72 @@
       </div>
     </section>
 
-    <div class="container" data-background="images/backgrounds/bg-dots.png">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <div class="bg-blue rounded text-center p-5 shadow-down">
-            <h4 class="mb-80">Upload CSV Form</h4>
-            <form class="row" id="uploadForm">
-              <div class="col-md-12">
-                <label for="csv_file" class="form-label">Choose CSV File:</label>
-                <input
-                  type="file"
-                  id="csv_file"
-                  name="csv_file"
-                  accept=".csv"
-                  class="form-control px-0 mb-4"
-                  required
-                />
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100">
-                  Upload
-                </button>
-              </div>
-            </form>
+    <section class="section pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="font-weight-bold mb-4" style="color: #4b0082">
+              About
+            </h2>
+            <p>
+              DataCrafter is designed to empower users by providing a
+              streamlined, efficient way to understand and analyze datasets with
+              just a simple CSV upload. Here’s how DataCrafter stands out as an
+              indispensable tool for data enthusiasts and professionals:
+            </p>
+            <ul style="list-style-type: none; padding-left: 0">
+              <li>
+                <strong>Quick Dataset Overview:</strong> Gain immediate insights
+                into the structure of your data, saving time and effort.
+              </li>
+              <li>
+                <strong>Comprehensive Descriptive Statistics:</strong>
+                Understand key metrics such as mean, median, and standard
+                deviation without manual calculations, allowing you to make
+                informed decisions faster.
+              </li>
+              <li>
+                <strong>Data Quality Insights:</strong> Instantly identify and
+                address missing values and quality issues to ensure your
+                analysis is based on clean, reliable data.
+              </li>
+              <li>
+                <strong>Outlier Detection:</strong> Automatically spot unusual
+                data points, helping you uncover hidden patterns or potential
+                errors that might affect your analysis.
+              </li>
+              <li>
+                <strong>Univariate Analysis:</strong> Visualize individual
+                feature distributions, which aids in understanding trends and
+                preparing data for advanced modeling.
+              </li>
+              <li>
+                <strong>Clustering Analysis:</strong> Group similar data points
+                to reveal natural patterns within your dataset, a valuable
+                feature for market segmentation, customer analysis, and more.
+              </li>
+              <li>
+                <strong>Data Cleaning Recommendations:</strong> Receive
+                automated suggestions to enhance data quality, making it easier
+                to prepare data for modeling and ensuring robust results.
+              </li>
+              <li>
+                <strong>Feature Engineering Ideas:</strong> Discover new feature
+                possibilities, enhancing your dataset’s predictive power and
+                allowing for more detailed analyses.
+              </li>
+            </ul>
+            <p class="mt-3">
+              DataCrafter serves as an essential starting point in any data
+              analysis workflow. By automating routine tasks and providing
+              insightful recommendations, it enables users to focus on strategic
+              analysis and decision-making, making it a valuable asset for
+              data-driven projects.
+            </p>
           </div>
         </div>
       </div>
-    </div>
-    
+    </section>
 
     <section
       class="section section-on-footer"
@@ -204,7 +238,5 @@
 
     <!-- Main Script -->
     <script src="js/script.js"></script>
-    <script src="js/upload.js"></script>
   </body>
 </html>
-

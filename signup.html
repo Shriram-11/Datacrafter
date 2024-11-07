@@ -1,84 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>SignUP</title>
-    <link rel="stylesheet" href="scripts/style.css" />
-    <style>
-      body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background-color: #f4f4f9;
-        color: #333;
-      }
+    <meta charset="utf-8" />
+    <title>Login</title>
 
-      .container {
-        background-color: white;
-        border-radius: 8px;
-        padding: 30px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
-    </style>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+    <!-- slick slider -->
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css" />
+
+    <!-- Main Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
   </head>
+
   <body>
-    <div class="navbar">
-      <a href="login.html"><button id="login">Login</button></a>
+    <header class="navigation fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand font-tertiary h3" href="index.html"
+          >DataCrafter</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- page title -->
+    <section class="page-title bg-primary position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="text-white font-tertiary">Sign UP</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /page title -->
+
+    <div class="container" data-background="images/backgrounds/bg-dots.png">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="bg-blue rounded text-center p-5 shadow-down">
+            <h4 class="mb-80">Sign UP Form</h4>
+            <form class="row" id="signupform">
+              <div class="col-md-12">
+                <input
+                  type="text"
+                  id="signupUsername"
+                  name="signupUsername"
+                  placeholder="Email"
+                  class="form-control px-0 mb-4"
+                  required
+                />
+              </div>
+              <div class="col-md-12">
+                <input
+                  type="password"
+                  id="signupPassword"
+                  name="signupPassword"
+                  placeholder="Password"
+                  class="form-control px-0 mb-4"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary w-100">
+                  Sign Up
+                </button>
+              </div>
+              <div class="col-12 mt-3">
+                <p>
+                  Already a User?
+                  <a href="login.html" class="text-decoration-none"
+                    >Login here</a
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="container">
-      <h2>Sign UP</h2>
-      <form id="signupform">
-        <label for="signupUsername">Username:</label>
-        <input type="text" id="signupUsername" name="username" required />
+    <div class="container" data-background="images/backgrounds/bg-dots.png">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="bg-white rounded text-center p-5 shadow-down">
+            <h4 class="mb-80">Contact Form</h4>
+            <!-- Use Web3Forms API with your Access Key -->
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="row"
+            >
+              <!-- Web3Forms Access Key -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="b1b1ac52-68aa-42d7-9e93-75424feb9787"
+              />
 
-        <label for="signupPassword">Password:</label>
-        <input type="password" id="signupPassword" name="password" required />
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" style="display: none" />
 
-        <button type="submit">Sign UP</button>
-      </form>
+              <!-- Form Fields -->
+              <div class="col-md-6">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Full Name"
+                  class="form-control px-0 mb-4"
+                  required
+                />
+              </div>
+              <div class="col-md-6">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  class="form-control px-0 mb-4"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <textarea
+                  name="message"
+                  id="message"
+                  class="form-control px-0 mb-4"
+                  placeholder="Type Message Here"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Custom Redirect (Optional) -->
+              <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thank-you.html"> -->
+
+              <div class="col-lg-6 col-10 mx-auto">
+                <button type="submit" class="btn btn-primary w-100">
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Place the script at the bottom of the body -->
-    <script>
-      document
-        .getElementById("signupform")
-        .addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const username = document.getElementById("signupUsername").value; // Ensure unique ID for signup username
-          const password = document.getElementById("signupPassword").value; // Ensure unique ID for signup password
+  <!-- /contact -->
 
-          try {
-            const response = await fetch("http://127.0.0.1:8000/api/signup/", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ username, password }),
-            });
+  <!-- footer -->
+  <footer class="bg-dark footer-section">
+    <div class="border-top text-center border-dark py-5">
+      <p class="mb-0 text-light">
+        Copyright ©
+        <script>
+          var CurrentYear = new Date().getFullYear();
+          document.write(CurrentYear);
+        </script>
+        <a href="https://shriram-11.github.io">shriram_naik.me</a>
+      </p>
+    </div>
+  </footer>
+  <!-- /footer -->
 
-            const data = await response.json();
-            if (data.success) {
-              alert("Signup successful! Please log in.");
-              window.location.href = "login.html"; // Redirect to login page
-            } else {
-              alert("Signup failed: " + data.message);
-            }
-          } catch (error) {
-            console.error("Error during signup request:", error);
-            alert("An error occurred. Please try again.");
-          }
-        });
-    </script>
+
+    <!-- jQuery -->
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="plugins/slick/slick.min.js"></script>
+    <!-- filter -->
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="js/signup.js"></script>
+
+    <!-- Main Script -->
+    <script src="js/script.js"></script>
   </body>
 </html>
