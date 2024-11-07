@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Plugins and Stylesheets -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Print-specific CSS to hide contact form during printing -->
+    <style>
+      /* Hide contact form in footer when printing */
+      @media print {
+        .footer-section {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body data-background="images/backgrounds/bg-dots.png">
+    <header class="navigation fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand font-tertiary h3" href="index.html"
+          >DataCrafter</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse text-center" id="navigation">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/Shriram-11"
+                >My GitHub</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="window.print()">Print</a>
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="logout">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div id="reportContainer" class="section">
+      <!-- Report content will be dynamically inserted here -->
+    </div>
+
+    <!-- Footer with Contact Form -->
+    <footer class="bg-dark footer-section">
+      <section
+        class="section section-on-footer"
+        data-background="images/backgrounds/bg-dots.png"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="bg-white rounded text-center p-5 shadow-down">
+                <h4 class="mb-80">Contact Form</h4>
+                <form
+                  action="https://api.web3forms.com/submit"
+                  method="POST"
+                  class="row"
+                >
+                  <input
+                    type="hidden"
+                    name="access_key"
+                    value="b1b1ac52-68aa-42d7-9e93-75424feb9787"
+                  />
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    style="display: none"
+                  />
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Full Name"
+                      class="form-control px-0 mb-4"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email Address"
+                      class="form-control px-0 mb-4"
+                      required
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      name="message"
+                      id="message"
+                      class="form-control px-0 mb-4"
+                      placeholder="Type Message Here"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-lg-6 col-10 mx-auto">
+                    <button type="submit" class="btn btn-primary w-100">
+                      Send
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="section">
+        <div class="border-top text-center border-dark py-5">
+          <p class="mb-0 text-light">
+            Copyright ©
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            <a href="https://shriram-11.github.io">shriram_naik.me</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery, Bootstrap JS, and other plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/shuffle/shuffle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/eda_report.js"></script>
+  </body>
+</html>

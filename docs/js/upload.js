@@ -25,3 +25,12 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
             alert("Upload failed: " + data.message);
           }
 });
+
+document.getElementById("logout").addEventListener("click", () => {
+  // Clear the access token from localStorage
+  localStorage.removeItem("token");
+
+  // Redirect to the login page
+  window.location.href = "login.html"; // or the appropriate login page URL
+});
+

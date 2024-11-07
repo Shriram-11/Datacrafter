@@ -24,3 +24,11 @@ console.error("Error during signup request:", error);
 alert("An error occurred. Please try again.");
 }
 });
+
+document.getElementById("logout").addEventListener("click", () => {
+    // Clear the access token from localStorage
+    localStorage.removeItem("token");
+
+    // Redirect to the login page
+    window.location.href = "login.html"; // or the appropriate login page URL
+});
